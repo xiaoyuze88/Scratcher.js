@@ -643,7 +643,7 @@ new Scratcher({
     }
 
     function _mouseToTouchEvent(event) {
-        // 给事件添加touches，包含pageX,pageY属性
+        // Normalize mouse event to touch event
         event.touches = [{
             pageX: event.pageX,
             pageY: event.pageY
