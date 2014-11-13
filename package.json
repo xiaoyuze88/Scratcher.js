@@ -1,0 +1,17 @@
+{
+  "name": "Scratcher.js",
+  "description": "A scrach off pluggin based on HTML5",
+  "version": "1.0",
+  "homepage": "https://github.com/xiaoyuze88/Scratcher.js",
+  "author": "Xiao yuze <xiaoyuze88@gmail.com> (http://xiaoyuze.com)",
+  "keywords": [
+    "scratcher",
+    "scratch off",
+    "canvas",
+    "html5"
+  ],
+  "main": "build/Scratcher.min.js",
+  "devDependencies": {
+  },
+  "license": "MIT"
+}
