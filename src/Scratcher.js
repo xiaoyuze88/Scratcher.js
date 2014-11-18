@@ -77,7 +77,7 @@ new Scratcher({
             isAndroid = ua.indexOf("android") > -1 ? true : false,
             androidVersion = -1; 
 
-        isAndroid && (androidVersion = ua.split("android")[1], androidVersion = parseFloat(androidVersion.substring(0, androidVersion.indexOf(";")))); //或者安卓的大版本号
+        isAndroid && (androidVersion = ua.split("android")[1], androidVersion = parseFloat(androidVersion.substring(0, androidVersion.indexOf(";"))));
 
         var hasIssueCanvas = isAndroid && androidVersion == 4.2;
         return {
@@ -370,7 +370,7 @@ new Scratcher({
         }
 
         /**
-        *   If the event if trigger from mouseevent, normalize it to touch event
+        *   If the event is trigger from mouseevent, normalize it to touch event
         */
         'mousedown' == e.type && (e = _mouseToTouchEvent(e));
 
@@ -384,7 +384,7 @@ new Scratcher({
         this.y1 = y * this.forRetinaRate;
 
         /**
-        *   After click/touch start, draw an circle at once
+        *   After click/touch start, draw a circle at once
         */
         this.ctx.save();
         this.ctx.beginPath();
@@ -402,10 +402,13 @@ new Scratcher({
         *   When click/touch end, remove listener for moving
         */
         $(document).one(Events.UP, function() {
+
             $(document).off(Events.MOVE, this.handleMove);
+
             if(self.useFakeCaculate) {
                 this.fakeTimer = setTimeout(function(){
-                    // TODO: 根据图片大小和weight计算这个次数
+                    
+                    // TODO: Calculate this value from the image size
                     if(self.fakeCounter > 120) {
                         self.trigger("scratchFinish");
                         self.clear();
@@ -449,9 +452,9 @@ new Scratcher({
             this.ctx.closePath();
             
             /**
-            *   Issue found in Android 4.2.2 that canvas can't be repaint currectly when we drawing lines,
-            *   so we must to enforce the canvas to repaint by setting its font color to a random color when 
-            *   move event triggered.
+            *   Issue found in Android 4.2.2 that canvas can't be repaint currectly when we're drawing lines,
+            *   so enforce the canvas to repaint by setting its font color to a random color when move event triggered.
+            *   
             *   This could cost a little performance problem.
             */
             if (Sys.hasIssueCanvas) {

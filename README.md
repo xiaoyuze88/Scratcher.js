@@ -1,8 +1,8 @@
 # Scratcher.js #
 
-	A tiny `scratch off` pluggin based on HTML5 canvas for mobile. 
-	Have only 2.3k after gzip.
-	<a href="http://xiaoyuze.com/demo/scratcher/demo.html">Here's a live demo</a>
+A tiny `scratch off` pluggin based on HTML5 canvas for mobile. 
+Have only 2.3k after gzip.
+<a href="http://xiaoyuze.com/demo/scratcher/demo.html">Here's a live demo</a>
 	
 
 ## Support ##
